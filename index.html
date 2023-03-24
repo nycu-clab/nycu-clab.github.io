@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Two-Layer Zero Motion Coding - Hierarchical B-Frame Video Coding without Motion Coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Style the container div */
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Style the content div */
+      .content {
+        background-color: white;
+        padding: 20px;
+      }
+
+      body {
+        text-align: justify;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .image-container {
+        width: 48%;
+        margin-bottom: 20px;
+      }
+
+      .image-container p {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px 0 0 0;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+
+        .image-container {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Create a container div to hold the content -->
+    <div class="container">
+      <!-- Create a content div for the actual content -->
+      <div class="content">
+        <h1>TLZMC: Hierarchical B-Frame Video Coding without Motion Coding</h1>
+
+        <p>
+          <strong>Author:</strong> David Alexandre<sup>1</sup>, Hsueh-Ming
+          Hang<sup>2</sup>, Wen-Hsiao Peng<sup>3</sup><br />
+          <strong>Affiliation:</strong> <sup>1</sup>Electrical Engineering and
+          Computer Science International Graduate Program, <sup>2</sup>Institute
+          of Electronics, <sup>3</sup>Department of Computer Science, National
+          Yang Ming Chiao Tung University, Hsinchu, Taiwan<br />
+        </p>
+
+        <p>Abstract</p>
+        <p>
+          Typical video compression systems consist of two main modules: motion
+          coding and residual coding. This general architecture is adopted by
+          classical coding schemes (such as international standards H.265 and
+          H.266) and deep learning-based coding schemes. We propose a novel
+          B-frame coding architecture based on two-layer Conditional Augmented
+          Normalization Flows (CANF). It has the striking feature of not
+          transmitting any motion information. Our proposed idea of video
+          compression without motion coding offers a new direction for learned
+          video coding. Our base layer is a low-resolution image compressor that
+          replaces the full-resolution motion compressor. The low-resolution
+          coded image is merged with the warped high-resolution images to
+          generate a high-quality image as a conditioning signal for the
+          enhancement-layer image coding in full resolution. One advantage of
+          this architecture is significantly reduced computational complexity
+          due to eliminating the motion information compressor. In addition, we
+          adopt a skip-mode coding technique to reduce the transmitted latent
+          samples. The rate-distortion performance of our scheme is slightly
+          lower than that of the state-of-the-art learned B-frame coding scheme,
+          B-CANF, but outperforms other learned B-frame coding schemes. However,
+          compared to B-CANF, our scheme saves 45% of multiply– accumulate operations (MACs) for encoding and 27% of MACs for decoding.
+    </p>
+	<p>
+	Paper: updated soon
+	</p>
+	<p>
+	Code: updated soon
+	</p>
+
+    <div class="container" style="text-align: center;">
+      <div class="image-container">
+        <img src="tlzmc-framework.png" alt="TLZMC Framework" />
+        <p>(a) TLZMC</p>
+      </div>
+      <div class="image-container">
+        <img src="tlzmc-plus-framework.png" alt="TLZMC+ Framework" />
+        <p>(b) Variant of TLZMC: TLZMC+</p>
+      </div>
+    </div>
+
+    <div class="container" style="text-align: center;">
+      <div class="image-container" style="width: 300px; margin: 0 auto;">
+        <img src="tlzmc-complexity.png" alt="TLZMC RD-Curve" />
+        <p>COMPUTATIONAL COMPLEXITY</p>
+      </div>
+    </div>
+
+    <div class="container" style="text-align: center;">
+      <div
+        class="image-container"
+        style="width: 100%; max-width: 700px; margin: 0 auto;"
+      >
+        <img src="tlzmc-rd-curve.png" alt="TLZMC RD-Curve" />
+        <p>RD RESULTS</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
